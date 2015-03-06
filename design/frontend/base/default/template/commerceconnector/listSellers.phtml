@@ -1,0 +1,26 @@
+<?php
+if (count($shoplist)) { ?>
+
+<style>
+.commerce-connector--shops-list {
+    list-style: none;
+}
+.commerce-connector--shops-list li{
+    float: left;
+    margin-right: 10px;
+}
+    
+</style>
+
+<ul class="commerce-connector--shops-list">
+<?php foreach ($shoplist as $key => $value) { ?>
+    <li>
+        <a href="<?php echo $value['DEEPLINK']; ?>">
+            <img src="<?php echo $value['shopdata']['LOGO']; ?>" alt="<?php echo $value['shopdata']['NAME']; ?>" title="<?php echo $value['shopdata']['NAME']; ?>"/>
+        </a>
+    </li>
+    <?php } ?>
+</ul>
+<?php } else { ?>
+<?php echo $this->__('Information not found'); ?>
+<?php } ?>

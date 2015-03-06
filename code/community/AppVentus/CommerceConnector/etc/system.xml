@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config>
+      <sections>
+        <catalog  translate="label" module="commerceconnector">            
+                    <groups>
+                      <commerce_connector translate="label"> 
+                      <label>CommerceConnector</label>
+                      <frontend_type>text</frontend_type>
+                      <sort_order>5</sort_order>
+                      <show_in_default>1</show_in_default>
+                      <show_in_website>1</show_in_website>
+                      <show_in_store>1</show_in_store>
+                       <fields>
+                          <commerce_connector_api_key translate="label">
+                            <label>API Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </commerce_connector_api_key>
+                          <commerce_connector_api_secret translate="label">
+                            <label>API Secret</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </commerce_connector_api_secret>
+                          <commerce_connector_api_wsdl translate="label">
+                            <label>WSDL</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Should be an url</comment>
+                          </commerce_connector_api_wsdl>
+                          <commerce_connector_api_subid translate="label">
+                            <label>Sub id</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Frequently the company name</comment>
+                          </commerce_connector_api_subid>
+                       </fields>
+                       </commerce_connector>
+                    </groups>
+        </catalog>
+      </sections>
+</config>
