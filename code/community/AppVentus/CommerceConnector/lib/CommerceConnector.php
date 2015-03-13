@@ -14,12 +14,12 @@ class CommerceConnector
     private $subid;
     private $options = array();
 
-    public function __construct($wsdl, $username, $password, $subid)
+    public function __construct()
     {
-        $this->wsdl = $wsdl;
-        $this->username = $username;
-        $this->password = $password;
-        $this->subid = $subid;
+        $this->wsdl = Mage::getStoreConfig('catalog/commerce_connector/commerce_connector_api_wsdl');
+        $this->username = Mage::getStoreConfig('catalog/commerce_connector/commerce_connector_api_key');
+        $this->password = Mage::getStoreConfig('catalog/commerce_connector/commerce_connector_api_secret');
+        $this->subid = Mage::getStoreConfig('catalog/commerce_connector/commerce_connector_api_subid');
     }
 
     public function check($ean_codes, $options = null)
