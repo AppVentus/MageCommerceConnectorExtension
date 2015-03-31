@@ -45,6 +45,15 @@
                             <show_in_store>1</show_in_store>
                             <comment>Frequently the company name</comment>
                           </commerce_connector_api_subid>
+                          <commerce_connector_options translate="label">
+                            <label>Options</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Must be a json array. {'key': 'value'}</comment>
+                          </commerce_connector_options>
                        </fields>
                        </commerce_connector>
                     </groups>

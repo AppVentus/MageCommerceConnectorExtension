@@ -20,6 +20,7 @@ class CommerceConnector
         $this->username = Mage::getStoreConfig('catalog/commerce_connector/commerce_connector_api_key');
         $this->password = Mage::getStoreConfig('catalog/commerce_connector/commerce_connector_api_secret');
         $this->subid = Mage::getStoreConfig('catalog/commerce_connector/commerce_connector_api_subid');
+        $this->options = json_decode(Mage::getStoreConfig('catalog/commerce_connector/commerce_connector_options'));
     }
 
     public function check($ean_codes, $options = null)
