@@ -20,14 +20,13 @@ class CommerceConnector
         $this->username = Mage::getStoreConfig('catalog/commerce_connector/commerce_connector_api_key');
         $this->password = Mage::getStoreConfig('catalog/commerce_connector/commerce_connector_api_secret');
         $this->subid = Mage::getStoreConfig('catalog/commerce_connector/commerce_connector_api_subid');
-        $this->options = json_decode(Mage::getStoreConfig('catalog/commerce_connector/commerce_connector_options'));
+        $this->options = json_decode(Mage::getStoreConfig('catalog/commerce_connector/commerce_connector_options'), true);
     }
 
-    public function check($ean_codes, $options = null)
+    public function check($ean_codes, $options = array())
     {
         try {
             $this->mergeOptions($options);
-
             $soapClient = new Zend_Soap_Client($this->wsdl);
 
             return $soapClient->check($this->formatEAN($ean_codes), $this->username, $this->password, $this->options);
@@ -36,7 +35,7 @@ class CommerceConnector
         }
     }
 
-    public function shoprequest($ean_codes, $options = null)
+    public function shoprequest($ean_codes, $options = array())
     {
         try {
             $options['filter_subid'] = $this->subid;
