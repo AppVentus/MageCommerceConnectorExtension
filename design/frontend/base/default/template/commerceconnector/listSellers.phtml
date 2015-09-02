@@ -6,15 +6,20 @@
     float: left;
     margin-right: 10px;
 }
-    
+
 </style>
 
 <ul class="commerce-connector--shops-list">
-<?php foreach ($shoplist as $key => $value) { ?>
-    <li>
-        <a href="<?php echo $value['DEEPLINK']; ?>" target="_blank">
-            <img src="<?php echo $value['shopdata']['LOGO']; ?>" alt="<?php echo $value['shopdata']['NAME']; ?>" title="<?php echo $value['shopdata']['NAME']; ?>"/>
-        </a>
-    </li>
+<?php
+foreach ($shoplist as $simpleProduct => $retails) { ?>
+    <li id="retail-product-<?php echo $simpleProduct; ?>">
+    <?php foreach ($retails as $retail) { ?>
+        <?php foreach ($retail['shoplist'] as $value) { ?>
+            <a href="<?php echo $value['DEEPLINK']; ?>" target="_blank">
+                <img src="<?php echo $value['shopdata']['LOGO']; ?>" alt="<?php echo $value['shopdata']['NAME']; ?>" title="<?php echo $value['shopdata']['NAME']; ?>"/>
+            </a>
+        <?php } ?>
     <?php } ?>
+    </li>
+<?php } ?>
 </ul>

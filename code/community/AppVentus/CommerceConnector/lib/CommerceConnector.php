@@ -31,7 +31,7 @@ class CommerceConnector
 
             return $soapClient->check($this->formatEAN($ean_codes), $this->username, $this->password, $this->options);
         } catch (Exception $e) {
-            throw new Zend_Exception('Connector Service unavailable');
+            error_log('>>>>>>> Connector Service unavailable');
         }
     }
 
@@ -45,7 +45,7 @@ class CommerceConnector
 
             return $soapClient->shoprequest($this->formatEAN($ean_codes), $this->username, $this->password, $this->options);
         } catch (Exception $e) {
-            throw new Zend_Exception('Connector Service unavailable');
+            error_log('>>>>>>> Connector Service unavailable');
         }
     }
 

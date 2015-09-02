@@ -5,11 +5,12 @@ class AppVentus_CommerceConnector_Helper_Data extends Mage_Core_Helper_Abstract
      * Return retail number
      *
      * @return void
-     * @author 
+     * @author
      **/
-    public function getRetailNumber($ean)
+    public function getRetailNumber($eans)
     {
-        $retails = $this->getRetails($ean);
+        $retails = $this->getRetails($eans);
+
         return count($retails);
     }
 
@@ -17,13 +18,13 @@ class AppVentus_CommerceConnector_Helper_Data extends Mage_Core_Helper_Abstract
      * Return bool if product has retailer
      *
      * @return void
-     * @author 
+     * @author
      **/
-    public function getRetails($ean)
+    public function getRetails(array $eans)
     {
         $this->commerceConnector = new CommerceConnector();
-        $shopRequest = $this->commerceConnector->shoprequest(array($ean));
-        return $shopRequest[0]['shoplist'];
+        $shopRequest = $this->commerceConnector->shoprequest($eans);
+
+        return $shopRequest;
     }
 }
-	 
