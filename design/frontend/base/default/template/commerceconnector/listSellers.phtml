@@ -2,7 +2,7 @@
 .commerce-connector--shops-list {
     list-style: none;
 }
-.commerce-connector--shops-list li{
+.commerce-connector--shops-list li a {
     float: left;
     margin-right: 10px;
 }
@@ -12,7 +12,7 @@
 <ul class="commerce-connector--shops-list">
 <?php
 foreach ($shoplist as $simpleProduct => $retails) { ?>
-    <li id="retail-product-<?php echo $simpleProduct; ?>">
+    <li id="retail-product-<?php echo $simpleProduct; ?>" class="<?php if (!in_array($simpleProduct, $currentEans)) { echo 'hidden'; } ?>">
     <?php foreach ($retails as $retail) { ?>
         <?php foreach ($retail['shoplist'] as $value) { ?>
             <a href="<?php echo $value['DEEPLINK']; ?>" target="_blank">

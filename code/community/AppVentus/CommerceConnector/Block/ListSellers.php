@@ -18,6 +18,9 @@ class AppVentus_CommerceConnector_Block_ListSellers extends Mage_Core_Block_Temp
                 if ($simpleProduct->getEanCc()) {
                     $eans[] = $simpleProduct->getEanCc();
                 }
+                if ($childId == $current_product->getRefPref()) {
+                    $currentEans = $eans;
+                }
                 $simpleRetails = $commerceConnectorModel->getRetails($eans);
                 $retails[$simpleProduct->getEan()] = $simpleRetails;
             }
@@ -26,9 +29,11 @@ class AppVentus_CommerceConnector_Block_ListSellers extends Mage_Core_Block_Temp
             if ($current_product->getEanCc()) {
                 $eans[] = $current_product->getEanCc();
             }
+            $currentEans = $eans;
             $simpleRetails = $commerceConnectorModel->getRetails($eans);
             $retails[$current_product->getEan()] = $simpleRetails;
         }
+        $this->assign('currentEans', $currentEans);
         $this->assign('shoplist', $retails);
         $this->setTemplate('commerceconnector/listSellers.phtml');
     }
